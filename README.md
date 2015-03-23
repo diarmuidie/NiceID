@@ -5,6 +5,7 @@ diarmuidie/niceid
 
 Developed by [Diarmuid](https://diarmuid.ie/).
 
+[![Build Status](https://travis-ci.org/diarmuidie/niceid.svg)](https://travis-ci.org/diarmuidie/niceid)
 
 Features
 --------
@@ -60,7 +61,7 @@ echo $niceid->encode(123); // abbde
 To Do
 ---------
 - [ ] Add library to [packagist](http://packagist.org).
-- [ ] Setup Travis to run unit tests.
+- [x] Setup Travis to run unit tests.
 - [ ] Better handle UTF-8 chars in character string.
 
 Contributing
