@@ -38,6 +38,11 @@ echo $niceid->encode(123); // k4kxd
 ```
 Notice that a secret is passed to the NiceID constructor. This secret is used to encode and decode the IDs. If the secret changes then IDs cannot be decoded.
 
+Use the decode method to decode the NiceID back to an int.
+```php
+echo $niceid->decode('k4kxd'); // 123
+```
+
 You can also change the min length of the NiceID (Defaults to 5 if not specified):
 
 ```php
