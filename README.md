@@ -57,7 +57,14 @@ $niceid->setCharacters('abcde')
 echo $niceid->encode(123); // abbde
 ```
 
-### Contributing
+To Do
+---------
+- [ ] Add library to [packagist](http://packagist.org).
+- [ ] Setup Travis to run unit tests.
+- [ ] Better handle UTF-8 chars in character string.
+
+Contributing
+---------
 
 Feel free to contribute features, bug fixes or just helpful advice :smile:
 
@@ -66,7 +73,6 @@ Feel free to contribute features, bug fixes or just helpful advice :smile:
 3. Submit a PR
 ...
 4. Profit :sunglasses:
-
 
 
 Changelog
