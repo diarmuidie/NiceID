@@ -3,6 +3,7 @@
     "description": "Convert numeric ID to non-sequential short URL-friendly IDs",
     "keywords": ["id", "url friendly"],
     "license": "MIT",
+    "homepage": "http://github.com/diarmuidie/niceid",
     "authors": [
         {
             "name": "Diarmuid",
