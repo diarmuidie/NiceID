@@ -1,0 +1,23 @@
+{
+    "name": "diarmuidie/niceid",
+    "description": "Convert numeric ID to non-sequential short URL-friendly IDs",
+    "keywords": ["id", "url friendly"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Diarmuid",
+            "email": "contact@diarmuid.ie",
+            "homepage": "http://diarmuid.ie"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "~4.5",
+        "squizlabs/php_codesniffer": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Diarmuidie\\NiceID\\": "src"
+        }
+    }
+}
