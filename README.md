@@ -47,20 +47,20 @@ echo $niceid->decode('k4kxd'); // 123
 You can also change the min length of the NiceID (Defaults to 5 if not specified):
 
 ```php
-$niceid->setMinLength(10)
+$niceid->setMinLength(10);
 echo $niceid->encode(123); // uccccccu8p
 ```
 
 To specify the characters to use in the encoded string use the  `setCharacters()` method.
 
 ```php
-$niceid->setCharacters('abcde')
+$niceid->setCharacters('abcde');
 echo $niceid->encode(123); // abbde
 ```
 
 To Do
 ---------
-- [ ] Add library to [packagist](http://packagist.org).
+- [x] Add library to [packagist](http://packagist.org).
 - [x] Setup Travis to run unit tests.
 - [ ] Better handle UTF-8 chars in character string.
 
