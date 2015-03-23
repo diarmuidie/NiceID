@@ -1,7 +1,6 @@
 <?php
 /**
- * User: diarmuid <hello@diarmuid.ie>
- * Date: 22/03/15
+ * Taken from http://php.net/manual/en/function.base-convert.php#106546
  */
 
 namespace Diarmuidie\NiceID\Utilities;
