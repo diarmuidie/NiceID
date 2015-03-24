@@ -115,7 +115,7 @@ class NiceID
         $characters = implode($shuffledCharactersArray);
 
         // If a minLength is set bump up the input ID by this many orders of magnitude
-        if ($this->minLength > 0) {
+        if ($this->minLength > 2) {
             $id += pow(strlen($this->characters), $this->minLength - 2);
         }
 
@@ -152,7 +152,7 @@ class NiceID
         $id = (int)BaseConvert::convert($niceId, $characters, '0123456789');
 
         // If a minLength is set remove the value additions from the ID
-        if ($this->minLength > 0) {
+        if ($this->minLength > 2) {
             $id -= pow(strlen($this->characters), $this->minLength - 2);
         }
 
