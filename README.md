@@ -16,7 +16,7 @@ Features
 - URL friendly.
 - No external dependencies.
 - PSR-4 compatible.
-- Compatible with PHP >= 5.3.3 and [HHVM](http://hhvm.com).
+- Compatible with PHP >= 5.3.3.
 
 Installation
 ------------
