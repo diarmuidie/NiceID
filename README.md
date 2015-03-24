@@ -6,6 +6,8 @@ diarmuidie/niceid
 Developed by [Diarmuid](https://diarmuid.ie/).
 
 [![Build Status](https://travis-ci.org/diarmuidie/niceid.svg)](https://travis-ci.org/diarmuidie/niceid)
+[![Test Coverage](https://codeclimate.com/github/diarmuidie/niceid/badges/coverage.svg)](https://codeclimate.com/github/diarmuidie/niceid)
+[![Code Climate](https://codeclimate.com/github/diarmuidie/niceid/badges/gpa.svg)](https://codeclimate.com/github/diarmuidie/niceid)
 
 Features
 --------
@@ -63,6 +65,9 @@ To Do
 - [x] Add library to [packagist](http://packagist.org).
 - [x] Setup Travis to run unit tests.
 - [ ] Better handle UTF-8 chars in character string.
+- [ ] 100% Code coverage for unit tests.
+- [ ] Refactor `BaseConvert::convert()` method.
+- [ ] Handle `PHP_INT_MAX` overflow.
 
 Contributing
 ---------
