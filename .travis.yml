@@ -14,9 +14,16 @@ matrix:
     - php: 7.0
   fast_finish: true
 
+addons:
+  code_climate:
+    repo_token: 0e07bda5ef4758c77750a5e56a98b90dd72a7e257fd52d3a814feb6ebb3923f
+
 before_script:
   - composer self-update
   - composer install --prefer-source
 
 script:
   - ./vendor/bin/phpunit
+
+after_script:
+  - ./vendor/bin/test-reporter
