@@ -14,12 +14,12 @@ class FisherYatesTest extends \PHPUnit_Framework_TestCase
     /**
      * @var array Test unshuffled array
      */
-    private $unShuffledArray = ['a','b','c','d','e','f'];
+    private $unShuffledArray = array('a','b','c','d','e','f');
 
     /**
      * @var array Test shuffled array
      */
-    private $shuffledtestArray = ['a','c','e','f','b','d'];
+    private $shuffledtestArray = array('a','c','e','f','b','d');
 
     /**
      * @var string Test shuffle secret
