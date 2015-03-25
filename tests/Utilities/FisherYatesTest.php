@@ -37,16 +37,4 @@ class FisherYatesTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($shuffled, $this->shuffledtestArray);
 
     }
-
-    /**
-     * Test unshuffling
-     */
-    public function testUnShuffleArray()
-    {
-
-        $unshuffled = Utilities\FisherYates::unshuffle($this->shuffledtestArray, $this->testSecret);
-
-        $this->assertEquals($unshuffled, $this->unShuffledArray);
-
-    }
 }
