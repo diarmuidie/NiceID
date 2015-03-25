@@ -57,7 +57,8 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
     /**
      * Test changing the secret changes the encoding
      */
-    public function testSecret() {
+    public function testSecret()
+    {
 
         $testSecret = 'A secret';
         $this->niceid->setSecret($testSecret);
@@ -82,7 +83,8 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
     /**
      * Test changing the secret in the constructor changes the encoding
      */
-    public function testSecretConstructor() {
+    public function testSecretConstructor()
+    {
 
         $testSecret = 'A secret';
 
@@ -108,7 +110,8 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
     /**
      * Test setting and getting the characters works
      */
-    public function testSettingCharacters() {
+    public function testSettingCharacters()
+    {
 
         $testCharacters = 'a';
         $this->niceid->setCharacters($testCharacters);
@@ -122,7 +125,8 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
     /**
      * Test setting and getting the minLength works
      */
-    public function testSettingMinLength() {
+    public function testSettingMinLength()
+    {
 
         $testMinLength = 2;
         $this->niceid->setMinLength($testMinLength);
@@ -140,7 +144,8 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
      *
      * @dataProvider minLengthProvider
      */
-    public function testMinLength($minLength) {
+    public function testMinLength($minLength)
+    {
 
         $this->niceid->setMinLength($minLength);
 

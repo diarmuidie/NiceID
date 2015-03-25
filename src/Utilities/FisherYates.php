@@ -52,5 +52,4 @@ class FisherYates
         return $shuffledArray;
 
     }
-
 }
