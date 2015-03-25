@@ -168,7 +168,7 @@ class NiceID
     {
 
         // Return the last char in the ID
-        return (string)mb_substr($niceID, -1);
+        return mb_substr($niceID, -1);
 
     }
 
