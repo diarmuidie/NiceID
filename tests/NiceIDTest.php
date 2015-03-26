@@ -144,6 +144,29 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     *
+     */
+    public function testMaxLengthOverflow() {
+
+        // Work out the max length based on the PHP_INT_MAX of this system
+        $length  = (log10(PHP_INT_MAX))/(log10(63));
+
+        $over = ceil($length);
+        $under = floor($length);
+
+        // No exception
+        $this->niceid->setMinLength($under + 2);
+        $this->niceid->encode(1);
+
+        $this->setExpectedException('LengthException');
+
+        // Length Exception
+        $this->niceid->setMinLength($over + 2);
+        $this->niceid->encode(1);
+
+    }
+
+    /**
      * @return array
      */
     public function encodeDecodeProvider()

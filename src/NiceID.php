@@ -74,9 +74,14 @@ class NiceID
     }
 
     /**
+     * Get the maximum allowed value of the ID
      *
+     * @return int the maximum value of the ID
      */
+    public function getMaxID()
     {
+        $maxID = PHP_INT_MAX - $this->minLengthAdder($this->characters, $this->minLength);
+        return $maxID;
     }
 
     /**
@@ -87,6 +92,11 @@ class NiceID
      */
     public function encode($id)
     {
+
+        // Check the ID is within bounds
+        if ($id > $this->getMaxID()) {
+            throw new \LengthException('The provided ID is greater than the maximum allowed ID');
+        }
 
         $characters = $this->characters;
 
