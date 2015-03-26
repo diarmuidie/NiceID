@@ -60,6 +60,13 @@ class BaseConvert
         return $returnValue;
     }
 
+    /**
+     * Convert a number from any base to base10
+     *
+     * @param string $numberInput The number to convert
+     * @param string $fromBaseInput The base charset of the input number
+     * @return int The base 10 number
+     */
     private static function base10convert($numberInput, $fromBaseInput)
     {
 
