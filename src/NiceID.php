@@ -116,7 +116,7 @@ class NiceID
 
         // If a minLength is set bump up the input ID by this many orders of magnitude
         if ($this->minLength > 2) {
-            $id += pow(strlen($this->characters), $this->minLength - 2);
+            $id += $this->minLengthAdder($this->characters, $this->minLength);
         }
 
         // Encode the ID
@@ -153,10 +153,19 @@ class NiceID
 
         // If a minLength is set remove the value additions from the ID
         if ($this->minLength > 2) {
-            $id -= pow(strlen($this->characters), $this->minLength - 2);
+            $id -= $this->minLengthAdder($this->characters, $this->minLength);
         }
 
         return $id;
+    }
+
+    /**
+     * @param string $characters The characters tring
+     * @param int $minLength Min Length
+     * @return number
+     */
+    private function minLengthAdder($characters, $minLength) {
+        return pow(strlen($characters), $minLength - 2);
     }
 
     /**
