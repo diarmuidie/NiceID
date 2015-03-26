@@ -64,16 +64,6 @@ class NiceID
     }
 
     /**
-     * Get the characters string to use for encoding
-     *
-     * @return string
-     */
-    public function getCharacters()
-    {
-        return $this->characters;
-    }
-
-    /**
      * Set the min length of the encoded string
      *
      * @param int $minLength
@@ -84,13 +74,9 @@ class NiceID
     }
 
     /**
-     * Get the min length of the encoded string
      *
-     * @return int
      */
-    public function getMinLength()
     {
-        return $this->minLength;
     }
 
     /**

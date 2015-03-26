@@ -113,27 +113,15 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
     public function testSettingCharacters()
     {
 
-        $testCharacters = 'a';
+        $testCharacters = 'ab';
         $this->niceid->setCharacters($testCharacters);
+        $this->niceid->setMinLength(0);
 
-        $characters = $this->niceid->getCharacters();
+        $encoded = $this->niceid->encode(1);
 
-        $this->assertEquals($testCharacters, $characters);
-
-    }
-
-    /**
-     * Test setting and getting the minLength works
-     */
-    public function testSettingMinLength()
-    {
-
-        $testMinLength = 2;
-        $this->niceid->setMinLength($testMinLength);
-
-        $minLength = $this->niceid->getMinLength();
-
-        $this->assertEquals($testMinLength, $minLength);
+        $this->assertEquals(mb_strlen($encoded), 2);
+        $this->assertContains('a', $encoded);
+        $this->assertContains('b', $encoded);
 
     }
 
