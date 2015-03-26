@@ -29,7 +29,7 @@ class BaseConvert
         }
 
         // Build base character arrays
-        $toBase = self::mb_str_split($toBaseInput, 1);
+        $toBase = self::mbStrSplit($toBaseInput, 1);
 
         // Get base lengths
         $toLen = mb_strlen($toBaseInput);
@@ -48,10 +48,12 @@ class BaseConvert
             $base10 = $numberInput;
         }
 
+        // If the input number is less than the base 10 number do a direct lookup
         if ($base10 < mb_strlen($toBaseInput)) {
             return $toBase[$base10];
         }
 
+        // If the number is bigger than the input base build the output
         while ($base10 != '0') {
             $returnValue = $toBase[bcmod($base10, $toLen)] . $returnValue;
             $base10 = bcdiv($base10, $toLen, 0);
@@ -75,8 +77,8 @@ class BaseConvert
         $fromLen = mb_strlen($fromBaseInput);
 
         // Get base lengths
-        $number = self::mb_str_split($numberInput, 1);
-        $fromBase = self::mb_str_split($fromBaseInput);
+        $number = self::mbStrSplit($numberInput, 1);
+        $fromBase = self::mbStrSplit($fromBaseInput);
 
         $returnValue = 0;
         for ($i = 1; $i <= $numberLen; $i++) {
@@ -95,7 +97,7 @@ class BaseConvert
      * @param $string
      * @return array
      */
-    private static function mb_str_split($string)
+    private static function mbStrSplit($string)
     {
         return preg_split('//u', $string, -1, PREG_SPLIT_NO_EMPTY);
     }
