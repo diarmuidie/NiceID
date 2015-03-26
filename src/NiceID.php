@@ -19,7 +19,7 @@ class NiceID
     /**
      * @var string The default characters to use when encoding
      */
-    protected $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    protected $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_';
 
     /**
      * @var int The default min length of the encoded string

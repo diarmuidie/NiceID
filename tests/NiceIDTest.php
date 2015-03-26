@@ -163,7 +163,7 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
         return array(
             array(0, 'qcccc'),
             array(1, 'rTTrQ'),
-            array(987347623, 'r8LgCJQ'),
+            array(987347623, 'k14_E8'),
         );
     }
 
