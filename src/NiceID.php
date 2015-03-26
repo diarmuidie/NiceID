@@ -38,7 +38,7 @@ class NiceID
      */
     public function __construct($secret = null)
     {
-        if ($secret) {
+        if ($secret !== null) {
             $this->secret = $secret;
         }
     }
