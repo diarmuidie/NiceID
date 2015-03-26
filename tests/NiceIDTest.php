@@ -16,7 +16,7 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
     /**
      *
      */
-    public function setUp()
+    protected function setUp()
     {
         $this->niceid = new NiceID();
     }
