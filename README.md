@@ -34,6 +34,8 @@ Usage
 Generate an ID from a int:
 
 ```php
+require 'vendor/autoload.php';
+
 use Diarmuidie\NiceID\NiceID;
 
 $niceid = new NiceID('Some Random Secret Value');
@@ -65,9 +67,9 @@ To Do
 - [x] Add library to [packagist](http://packagist.org).
 - [x] Setup Travis to run unit tests.
 - [ ] Better handle UTF-8 chars in character string.
-- [ ] 100% Code coverage for unit tests.
-- [ ] Refactor `BaseConvert::convert()` method.
-- [ ] Handle `PHP_INT_MAX` overflow.
+- [x] 100% Code coverage for unit tests.
+- [x] Refactor `BaseConvert::convert()` method.
+- [x] Handle `PHP_INT_MAX` overflow.
 
 Contributing
 ---------
