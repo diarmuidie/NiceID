@@ -80,7 +80,7 @@ class FisherYates
         // Rebuild the array using the keys
         foreach ($shuffledArray as $key => $value) {
             // Add the value to the array in it's new location
-            array_splice($array, $keys[$key], null, $value);
+            array_splice($array, $keys[$key], 0, $value);
         }
 
         // Reset the seed
