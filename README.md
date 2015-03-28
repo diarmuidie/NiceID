@@ -95,6 +95,15 @@ Feel free to contribute features, bug fixes or just helpful advice :smile:
 Changelog
 ---------
 
+### Version 0.2 (28 March 2015)
+
+_Warning: NiceIds generated with previous versions will not decode correctly in this version._
+
+- Only pad string if `minLength` greater than 2.
+- Add _ (underscore) to characters string.
+- Throw `LengthException` for PHP_MAX_INT overflow.
+- Shuffle NiceID in encode function to eliminate consecutative similiar chars.
+
 ### Version 0.1 (23 March 2015)
 
 - Initial release.
