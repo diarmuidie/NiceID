@@ -97,7 +97,7 @@ class BaseConvert
      * @param $string
      * @return array
      */
-    private static function mbStrSplit($string)
+    public static function mbStrSplit($string)
     {
         return preg_split('//u', $string, -1, PREG_SPLIT_NO_EMPTY);
     }

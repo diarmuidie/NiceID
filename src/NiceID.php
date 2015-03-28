@@ -100,14 +100,15 @@ class NiceID
 
         $characters = $this->characters;
 
-        // Split characters string into array (preg_split plays nice with UTF-8 chars)
-        $charactersArray = preg_split('//u', $characters, -1, PREG_SPLIT_NO_EMPTY);
+        // Split characters string into array
+        $charactersArray = BaseConvert::mbStrSplit($characters);
 
         // Pick a random salt character
         $salt = $charactersArray[mt_rand(0, count($charactersArray) - 1)];
 
         // Shuffle the array
         $shuffledCharactersArray = FisherYates::shuffle($charactersArray, $this->secret . $salt);
+
         $characters = implode($shuffledCharactersArray);
 
         // If a minLength is set bump up the input ID by this many orders of magnitude
@@ -133,8 +134,8 @@ class NiceID
 
         $characters = $this->characters;
 
-        // Split characters string into array (preg_split plays nice with UTF-8 chars)
-        $charactersArray = preg_split('//u', $characters, -1, PREG_SPLIT_NO_EMPTY);
+        // Split characters string into array
+        $charactersArray = BaseConvert::mbStrSplit($characters);
 
         $salt = $this->getSaltChar($niceId);
 
