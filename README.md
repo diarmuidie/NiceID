@@ -1,7 +1,7 @@
 diarmuidie/niceid
 =============
 
-> Converts an ID into a non-sequential, URL friendly and short NiceID.
+> Converts an ID into a non-sequential, URL friendly and short NiceID. Similiar to YouTube (https://www.youtube.com/watch?v=dQw4w9WgXcQ) and Bitly (http://bit.ly/1D0CAzd) URLs.
 
 Developed by [Diarmuid](https://diarmuid.ie/).
 
