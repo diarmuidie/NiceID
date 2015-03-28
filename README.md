@@ -102,7 +102,7 @@ _Warning: NiceIds generated with previous versions will not decode correctly in 
 - Only pad string if `minLength` greater than 2.
 - Add _ (underscore) to characters string.
 - Throw `LengthException` for PHP_MAX_INT overflow.
-- Shuffle NiceID in encode function to eliminate consecutative similiar chars.
+- Shuffle NiceID in encode function to eliminate consecutive similiar chars.
 
 ### Version 0.1 (23 March 2015)
 
