@@ -39,13 +39,13 @@ require 'vendor/autoload.php';
 use Diarmuidie\NiceID\NiceID;
 
 $niceid = new NiceID('Some Random Secret Value');
-echo $niceid->encode(123); // k4kxd
+echo $niceid->encode(123); // uSdqd
 ```
 Notice that a secret is passed to the NiceID constructor. This secret is used to encode and decode the IDs. If the secret changes then IDs cannot be decoded.
 
 Use the decode method to decode the NiceID back to an int.
 ```php
-echo $niceid->decode('k4kxd'); // 123
+echo $niceid->decode('uSdqd'); // 123
 ```
 
 You can also change the min length of the NiceID (Defaults to 5 if not specified):
@@ -59,14 +59,23 @@ To specify the characters to use in the encoded string use the  `setCharacters()
 
 ```php
 $niceid->setCharacters('abcde');
-echo $niceid->encode(123); // abbde
+echo $niceid->encode(123); // adcce
+```
+
+The default character set is: `0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_`
+
+You can even specify a UTF-8 character set if you want:
+
+```php
+$niceid->setCharacters('ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ');
+echo $niceid->encode(123); // ⓖⓑⓥⓘⓘⓠ
 ```
 
 To Do
 ---------
 - [x] Add library to [packagist](http://packagist.org).
 - [x] Setup Travis to run unit tests.
-- [ ] Better handle UTF-8 chars in character string.
+- [x] Better handle UTF-8 chars in character string.
 - [x] 100% Code coverage for unit tests.
 - [x] Refactor `BaseConvert::convert()` method.
 - [x] Handle `PHP_INT_MAX` overflow.
