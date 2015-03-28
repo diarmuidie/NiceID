@@ -19,7 +19,7 @@ class FisherYatesTest extends \PHPUnit_Framework_TestCase
     /**
      * @var array Test shuffled array
      */
-    private $shuffledtestArray = array('a','c','e','f','b','d');
+    private $shuffledArray = array('a','c','e','f','b','d');
 
     /**
      * @var string Test shuffle secret
@@ -34,7 +34,19 @@ class FisherYatesTest extends \PHPUnit_Framework_TestCase
 
         $shuffled = Utilities\FisherYates::shuffle($this->unShuffledArray, $this->testSecret);
 
-        $this->assertEquals($shuffled, $this->shuffledtestArray);
+        $this->assertEquals($shuffled, $this->shuffledArray);
+
+    }
+
+    /**
+     * Test un-shuffling
+     */
+    public function testUnShuffleArray()
+    {
+
+        $unShuffled = Utilities\FisherYates::unshuffle($this->shuffledArray, $this->testSecret);
+
+        $this->assertEquals($unShuffled, $this->unShuffledArray);
 
     }
 }

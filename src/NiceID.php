@@ -119,6 +119,11 @@ class NiceID
         // Encode the ID
         $niceId = BaseConvert::convert($id, '0123456789', $characters) . $salt;
 
+        // Shuffle the ID to avoid repeated characters in padded strings
+        $niceIdArray = BaseConvert::mbStrSplit($niceId);
+        $niceId = FisherYates::shuffle($niceIdArray, $this->secret);
+        $niceId = implode($niceId);
+
         return $niceId;
 
     }
@@ -133,6 +138,11 @@ class NiceID
     {
 
         $characters = $this->characters;
+
+        // Unshuffle the ID
+        $niceIdArray = BaseConvert::mbStrSplit($niceId);
+        $niceId = FisherYates::unshuffle($niceIdArray, $this->secret);
+        $niceId = implode($niceId);
 
         // Split characters string into array
         $charactersArray = BaseConvert::mbStrSplit($characters);

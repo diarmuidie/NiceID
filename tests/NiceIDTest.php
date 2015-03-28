@@ -149,7 +149,7 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
     public function testMaxLengthOverflow() {
 
         // Work out the max length based on the PHP_INT_MAX of this system
-        $length  = (log10(PHP_INT_MAX))/(log10(63));
+        $length = (log10(PHP_INT_MAX))/(log10(63));
 
         $over = ceil($length);
         $under = floor($length);
@@ -172,9 +172,9 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
     public function encodeDecodeProvider()
     {
         return array(
-            array(0, 'qcccc'),
-            array(1, 'rTTrQ'),
-            array(987347623, 'k14_E8'),
+            array(0, 'siiig'),
+            array(1, 'e2BB2'),
+            array(987347623, 's27HCI'),
         );
     }
 

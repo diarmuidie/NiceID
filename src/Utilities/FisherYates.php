@@ -52,4 +52,41 @@ class FisherYates
         return $shuffledArray;
 
     }
+
+    /**
+     * Un-shuffle an array using a salt
+     *
+     * @param array $shuffledArray The array to un-shuffle
+     * @param string $secret The secret to salt the un-shuffle
+     * @return array The un-shuffled array
+     */
+    public static function unshuffle($shuffledArray, $secret)
+    {
+        // Hash the secret and convert to decimal
+        $secret = hexdec(substr(md5($secret), -6));
+
+        // Seed the random number generator
+        mt_srand($secret);
+
+        $keys = array();
+        // Build the encoding keys
+        for ($i = count($shuffledArray) - 1; $i >= 0; $i--) {
+            $keys[$i] = mt_rand(0, $i);
+        }
+
+        $shuffledArray = array_reverse($shuffledArray);
+
+        $array = array();
+        // Rebuild the array using the keys
+        foreach ($shuffledArray as $key => $value) {
+            // Add the value to the array in it's new location
+            array_splice($array, $keys[$key], null, $value);
+        }
+
+        // Reset the seed
+        mt_srand();
+
+        return $array;
+    }
+
 }
