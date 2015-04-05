@@ -137,9 +137,9 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     *
+     * Test encoding a integer that is larger than the PHP_MAX_INT throws an exception
      */
-    public function testMaxLengthOverflow()
+    public function testMaxLengthOverflowException()
     {
 
         // Work out the max length based on the PHP_INT_MAX of this system
@@ -158,6 +158,28 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
         $this->niceid->setMinLength($over + 2);
         $this->niceid->encode(1);
 
+    }
+
+    /**
+     * Test encoding anything but an int throws an exception
+     */
+    public function testNotIntEncodeException()
+    {
+
+        $this->setExpectedException('InvalidArgumentException');
+        $this->niceid->encode('1');
+
+    }
+
+    /**
+     * Test decoding anything but a scalar throws an exception
+     */
+    public function testNotScalarDecodeException()
+    {
+
+        $this->setExpectedException('InvalidArgumentException');
+        $this->niceid->decode(array());
+        
     }
 
     /**

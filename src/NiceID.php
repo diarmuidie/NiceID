@@ -93,9 +93,17 @@ class NiceID
     public function encode($id)
     {
 
+        if (!is_int($id)) {
+            throw new \InvalidArgumentException(
+                'The provided ID must be an integer. ' . ucfirst(gettype($id)) . ' provided.'
+            );
+        }
+
         // Check the ID is within bounds
         if ($id > $this->getMaxID()) {
-            throw new \LengthException('The provided ID is greater than the maximum allowed ID');
+            throw new \LengthException(
+                'The provided ID is greater than the maximum allowed ID'
+            );
         }
 
         $characters = $this->characters;
@@ -136,6 +144,12 @@ class NiceID
      */
     public function decode($niceId)
     {
+
+        if (!is_scalar($niceId)) {
+            throw new \InvalidArgumentException(
+                'The provided NiceId must be a scalar. ' . ucfirst(gettype($niceId)) . ' provided.'
+            );
+        }
 
         $characters = $this->characters;
 
