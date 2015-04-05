@@ -63,6 +63,8 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
         $testSecret = 'A secret';
         $this->niceid->setSecret($testSecret);
 
+        $this->assertAttributeEquals($testSecret, 'secret', $this->niceid);
+
         $int = 12;
         $encoded = $this->niceid->encode($int);
 
@@ -90,20 +92,7 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
 
         $niceid = new NiceID($testSecret);
 
-        $int = 12;
-        $encoded = $niceid->encode($int);
-
-        // Set the incorrect secret
-        $niceid->setSecret('');
-        $decodedInt = $niceid->decode($encoded);
-
-        $this->assertNotEquals($decodedInt, $int);
-
-        // Change the secret back
-        $niceid->setSecret($testSecret);
-        $decodedInt = $niceid->decode($encoded);
-
-        $this->assertEquals($decodedInt, $int);
+        $this->assertAttributeEquals($testSecret, 'secret', $niceid);
 
     }
 
@@ -116,6 +105,8 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
         $testCharacters = 'ab';
         $this->niceid->setCharacters($testCharacters);
         $this->niceid->setMinLength(0);
+
+        $this->assertAttributeEquals($testCharacters, 'characters', $this->niceid);
 
         $encoded = $this->niceid->encode(1);
 
@@ -137,6 +128,8 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
 
         $this->niceid->setMinLength($minLength);
 
+        $this->assertAttributeEquals($minLength, 'minLength', $this->niceid);
+
         $encoded = $this->niceid->encode(10);
 
         $this->assertGreaterThanOrEqual($minLength, strlen($encoded));
@@ -146,7 +139,8 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
     /**
      *
      */
-    public function testMaxLengthOverflow() {
+    public function testMaxLengthOverflow()
+    {
 
         // Work out the max length based on the PHP_INT_MAX of this system
         $length = (log10(PHP_INT_MAX))/(log10(63));
