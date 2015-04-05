@@ -171,7 +171,8 @@ class NiceID
      * @param int $minLength Min Length
      * @return number
      */
-    private function minLengthAdder($characters, $minLength) {
+    private function minLengthAdder($characters, $minLength)
+    {
         return pow(strlen($characters), $minLength - 2);
     }
 

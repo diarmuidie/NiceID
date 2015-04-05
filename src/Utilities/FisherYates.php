@@ -88,5 +88,4 @@ class FisherYates
 
         return $array;
     }
-
 }
