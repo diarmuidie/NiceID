@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * This file is part of Diarmuidie\NiceID.
+ *
+ * (c) Diarmuid <hello@diarmuid.ie>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 namespace Diarmuidie\NiceID\Tests;
 
@@ -7,14 +15,19 @@ use Diarmuidie\NiceID\NiceID;
 
 /**
  * Class NiceIDTest
- * @package Diarmuidie\NiceID\Tests
+ *
+ * @category  test
+ * @package   Diarmuidie\NiceID
+ * @author    Diarmuid <hello@diarmuid.ie>
+ * @copyright 2015 Diarmuid
+ * @license   http://www.opensource.org/licenses/MIT The MIT License
  */
 class NiceIDTest extends \PHPUnit_Framework_TestCase
 {
     private $niceid;
 
     /**
-     *
+     * Initialise a new NiceId instance for each test
      */
     protected function setUp()
     {
@@ -179,7 +192,7 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
 
         $this->setExpectedException('InvalidArgumentException');
         $this->niceid->decode(array());
-        
+
     }
 
     /**

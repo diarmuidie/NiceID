@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * This file is part of Diarmuidie\NiceID.
+ *
+ * (c) Diarmuid <hello@diarmuid.ie>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 namespace Diarmuidie\NiceID\Tests\Utilities;
 
@@ -7,7 +15,12 @@ use Diarmuidie\NiceID\Utilities;
 
 /**
  * Class NiceIDTest
- * @package Diarmuidie\NiceID\Tests
+ *
+ * @category  test
+ * @package   Diarmuidie\NiceID
+ * @author    Diarmuid <hello@diarmuid.ie>
+ * @copyright 2015 Diarmuid
+ * @license   http://www.opensource.org/licenses/MIT The MIT License
  */
 class BaseConvertTest extends \PHPUnit_Framework_TestCase
 {

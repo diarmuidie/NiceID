@@ -1,14 +1,23 @@
 <?php
+
 /**
- * User: diarmuid <hello@diarmuid.ie>
- * Date: 22/03/15
+ * This file is part of Diarmuidie\NiceID.
+ *
+ * (c) Diarmuid <hello@diarmuid.ie>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace Diarmuidie\NiceID\Utilities;
 
 /**
  * Class FisherYates
- * @package Diarmuidie\NiceID\Utilities
+ *
+ * @package   Diarmuidie\NiceID
+ * @author    Diarmuid <hello@diarmuid.ie>
+ * @copyright 2015 Diarmuid
+ * @license   http://www.opensource.org/licenses/MIT The MIT License
  */
 class FisherYates
 {
