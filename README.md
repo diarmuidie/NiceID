@@ -116,7 +116,7 @@ _Warning: NiceIds generated with previous versions will not decode correctly in 
 Authors
 -------
 
-- [Diarmuid](http://diamruid.ie) ([Twitter](http://twitter.com/diarmuidie))
+- [Diarmuid](http://diarmuid.ie) ([Twitter](http://twitter.com/diarmuidie))
 
 
 License
