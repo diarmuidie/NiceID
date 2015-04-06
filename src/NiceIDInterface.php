@@ -23,6 +23,8 @@ interface NiceIDInterface {
 
     /**
      * @param null|string $secret Optionally provide a secret to use when encoding/decoding
+     *
+     * @return null
      */
     public function __construct($secret = null);
 
@@ -38,11 +40,11 @@ interface NiceIDInterface {
     /**
      * Decode a NiceID
      *
-     * @param string $NiceId
+     * @param string $niceId
      *
      * @return integer The decoded ID
      */
-    public function decode($NiceId);
+    public function decode($niceId);
 
     /**
      * Get the maximum allowed value for the ID
