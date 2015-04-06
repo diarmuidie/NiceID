@@ -13,7 +13,7 @@ use Diarmuidie\NiceID\Utilities\FisherYates;
  * Class NiceID
  * @package Diarmuidie\NiceID
  */
-class NiceID
+class NiceID implements NiceIDInterface
 {
 
     /**
