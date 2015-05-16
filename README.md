@@ -95,6 +95,11 @@ Feel free to contribute features, bug fixes or just helpful advice :smile:
 Changelog
 ---------
 
+### Version 0.2.2 (16 May 2015)
+
+- Bump composer dependencies.
+- Add `.gitattributes` file to exclude build assets from composer install.
+
 ### Version 0.2.1 (6 April 2015)
 
 - NiceID class now implements the NiceIdInterface.
