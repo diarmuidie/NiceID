@@ -19,7 +19,8 @@ namespace Diarmuidie\NiceID;
  * @copyright 2015 Diarmuid
  * @license   http://www.opensource.org/licenses/MIT The MIT License
  */
-interface NiceIDInterface {
+interface NiceIDInterface
+{
 
     /**
      * @param null|string $secret Optionally provide a secret to use when encoding/decoding
