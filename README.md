@@ -5,9 +5,12 @@ diarmuidie/niceid
 
 Developed by [Diarmuid](https://diarmuid.ie/).
 
+[![Latest Stable Version](https://poser.pugx.org/diarmuidie/niceid/v/stable)](https://packagist.org/packages/diarmuidie/niceid)
+[![License](https://poser.pugx.org/diarmuidie/niceid/license)](https://packagist.org/packages/diarmuidie/niceid)
 [![Build Status](https://travis-ci.org/diarmuidie/niceid.svg)](https://travis-ci.org/diarmuidie/niceid)
 [![Test Coverage](https://codeclimate.com/github/diarmuidie/niceid/badges/coverage.svg)](https://codeclimate.com/github/diarmuidie/niceid)
 [![Code Climate](https://codeclimate.com/github/diarmuidie/niceid/badges/gpa.svg)](https://codeclimate.com/github/diarmuidie/niceid)
+<!-- [![Total Downloads](https://poser.pugx.org/diarmuidie/niceid/downloads)](https://packagist.org/packages/diarmuidie/niceid) -->
 
 Features
 --------
