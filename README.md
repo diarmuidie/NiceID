@@ -82,7 +82,7 @@ To Do
 - [x] 100% Code coverage for unit tests.
 - [x] Refactor `BaseConvert::convert()` method.
 - [x] Handle `PHP_INT_MAX` overflow.
-- [ ] Impelement [BCMath](http://php.net/manual/en/book.bc.php) support for integers larger than `PHP_INT_MAX`.
+- [ ] Implement [BCMath](http://php.net/manual/en/book.bc.php) support for integers larger than `PHP_INT_MAX`.
 
 Contributing
 ---------
