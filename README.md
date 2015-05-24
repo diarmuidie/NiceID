@@ -1,7 +1,7 @@
 diarmuidie/niceid
 =============
 
-> Converts an ID into a non-sequential, URL friendly and short NiceID. Similiar to YouTube (https://www.youtube.com/watch?v=dQw4w9WgXcQ) and Bitly (http://bit.ly/1D0CAzd) URLs.
+PHP library to generate short, non-sequential, URL-friendly hashes of incremental IDs. Similar to YouTube [https://www.youtube.com/watch?v=dQw4w9WgXcQ](https://www.youtube.com/watch?v=dQw4w9WgXcQ) and Bitly [http://bit.ly/1D0CAzd](http://bit.ly/1D0CAzd) URLs.
 
 Developed by [Diarmuid](https://diarmuid.ie/).
 
@@ -15,7 +15,7 @@ Developed by [Diarmuid](https://diarmuid.ie/).
 Features
 --------
 
-- Non-sequential IDs (i.e. difficult to guess the next one).
+- Non-sequential IDs (i.e. difficult, but not impossible, to guess the next one).
 - URL friendly.
 - No external dependencies.
 - PSR-4 compatible.

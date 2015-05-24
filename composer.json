@@ -1,6 +1,6 @@
 {
     "name": "diarmuidie/niceid",
-    "description": "Convert numeric IDs to non-sequential short URL-friendly IDs, similiar to Youtube and URL shorteners",
+    "description": "PHP library to generate short, non-sequential, URL-friendly hashes of incremental IDs. Similar to YouTube (https://www.youtube.com/watch?v=dQw4w9WgXcQ) and Bitly (http://bit.ly/1D0CAzd) URLs.",
     "keywords": ["id", "url friendly", "hash", "obfuscate"],
     "license": "MIT",
     "homepage": "http://github.com/diarmuidie/niceid",
