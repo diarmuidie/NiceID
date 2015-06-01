@@ -10,6 +10,7 @@ Developed by [Diarmuid](https://diarmuid.ie/).
 [![Build Status](https://travis-ci.org/diarmuidie/niceid.svg)](https://travis-ci.org/diarmuidie/niceid)
 [![Test Coverage](https://codeclimate.com/github/diarmuidie/niceid/badges/coverage.svg)](https://codeclimate.com/github/diarmuidie/niceid)
 [![Code Climate](https://codeclimate.com/github/diarmuidie/niceid/badges/gpa.svg)](https://codeclimate.com/github/diarmuidie/niceid)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/319dfe53-d14e-478a-99e7-7f795fa33a2b/mini.png)](https://insight.sensiolabs.com/projects/319dfe53-d14e-478a-99e7-7f795fa33a2b)
 <!-- [![Total Downloads](https://poser.pugx.org/diarmuidie/niceid/downloads)](https://packagist.org/packages/diarmuidie/niceid) -->
 
 Features
