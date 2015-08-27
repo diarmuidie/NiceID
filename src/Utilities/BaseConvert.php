@@ -28,7 +28,7 @@ class BaseConvert
     /**
      * Convert number from any base to any base.
      *
-     * @param string $numberInput        The number to convert
+     * @param string $number             The number to convert
      * @param string $fromBaseCharacters The base charset of the supplied number
      * @param string $toBaseCharacters   The base charset for the converted number
      *
@@ -90,8 +90,8 @@ class BaseConvert
     /**
      * Convert a number from any base to decimal
      *
-     * @param string $numberInput The number to convert
-     * @param string $fromBaseInput The base charset of the input number
+     * @param string $number             The number to convert
+     * @param string $toBaseCharacterSet The base charset of the input number
      *
      * @return int The base 10 number
      */
