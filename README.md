@@ -7,7 +7,7 @@ Developed by [Diarmuid](https://diarmuid.ie/).
 
 [![Latest Stable Version](https://poser.pugx.org/diarmuidie/niceid/v/stable)](https://packagist.org/packages/diarmuidie/niceid)
 [![License](https://poser.pugx.org/diarmuidie/niceid/license)](https://packagist.org/packages/diarmuidie/niceid)
-[![Build Status](https://travis-ci.org/diarmuidie/NiceID.svg)](https://travis-ci.org/diarmuidie/niceid)
+[![Build Status](https://travis-ci.org/diarmuidie/NiceID.svg)](https://travis-ci.org/diarmuidie/NiceID)
 [![Test Coverage](https://codeclimate.com/github/diarmuidie/niceid/badges/coverage.svg)](https://codeclimate.com/github/diarmuidie/niceid)
 [![Code Climate](https://codeclimate.com/github/diarmuidie/niceid/badges/gpa.svg)](https://codeclimate.com/github/diarmuidie/niceid)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/319dfe53-d14e-478a-99e7-7f795fa33a2b/mini.png)](https://insight.sensiolabs.com/projects/319dfe53-d14e-478a-99e7-7f795fa33a2b)
