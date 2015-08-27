@@ -121,8 +121,8 @@ class BaseConvert
         $returnValue = '';
 
         while ($number != '0') {
-            $SmallestExponent = bcmod($number, count($toBaseCharacters));
-            $returnValue = $toBaseCharacters[$SmallestExponent] . $returnValue;
+            $smallestExponent = bcmod($number, count($toBaseCharacters));
+            $returnValue = $toBaseCharacters[$smallestExponent] . $returnValue;
             $number = bcdiv($number, count($toBaseCharacters), 0);
         }
 
