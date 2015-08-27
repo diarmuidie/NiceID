@@ -28,82 +28,105 @@ class BaseConvert
     /**
      * Convert number from any base to any base.
      *
-     * @param string $numberInput The number to convert
-     * @param string $fromBaseInput The base charset of the supplied number
-     * @param string $toBaseInput The base charset for the converted number
+     * @param string $numberInput        The number to convert
+     * @param string $fromBaseCharacters The base charset of the supplied number
+     * @param string $toBaseCharacters   The base charset for the converted number
      *
      * @return int|string
      */
-    public static function convert($numberInput, $fromBaseInput, $toBaseInput)
+    public static function convert($number, $fromBaseCharacters, $toBaseCharacters)
     {
+        $decimalNumber = self::nonDecimalToDecimal($number, $fromBaseCharacters);
 
-        if ($fromBaseInput == $toBaseInput) {
-            return $numberInput;
+        if (self::isDecimalCharacterSet($toBaseCharacters)) {
+            return $decimalNumber;
         }
 
-        // Build base character arrays
-        $toBase = self::mbStrSplit($toBaseInput, 1);
-
-        // Get base lengths
-        $toLen = mb_strlen($toBaseInput);
-
-        // Convert to base 10
-        if ($toBaseInput == '0123456789') {
-            return self::base10convert($numberInput, $fromBaseInput);
-        }
-
-        // If First convert the number to base10
-        if ($fromBaseInput != '0123456789') {
-            $base10 = self::base10convert($numberInput, $fromBaseInput);
-        } else {
-            $base10 = $numberInput;
-        }
-
-        // If the input number is less than the base 10 number do a direct lookup
-        if ($base10 < mb_strlen($toBaseInput)) {
-            return $toBase[$base10];
-        }
-
-        $returnValue = '';
-
-        // If the number is bigger than the input base build the output
-        while ($base10 != '0') {
-            $returnValue = $toBase[bcmod($base10, $toLen)] . $returnValue;
-            $base10 = bcdiv($base10, $toLen, 0);
-        }
-
-        return $returnValue;
-
+        return self::decimalToNonDecimal($decimalNumber, $toBaseCharacters);
     }
 
     /**
-     * Convert a number from any base to base10
+     * Is the character set a decimal characterset
+     *
+     * @param  string  $characterSet
+     *
+     * @return boolean
+     */
+    private static function isDecimalCharacterSet($characterSet)
+    {
+        return ($characterSet == '0123456789');
+    }
+
+    /**
+     * Convert a number from any base to decimal
+     *
+     * @param string $number               The number to convert
+     * @param string $fromBaseCharacterSet The base charset of the input number
+     *
+     * @return int The base 10 number
+     */
+    private static function nonDecimalToDecimal($number, $fromBaseCharacterSet)
+    {
+        // Build base character arrays
+        $numberCharacters = self::mbStrSplit($number);
+        $fromBaseCharacters = self::mbStrSplit($fromBaseCharacterSet);
+
+        // Get base lengths
+        $numberLen = count($numberCharacters);
+        $fromLen = count($fromBaseCharacters);
+
+        $decimal = 0;
+
+        foreach ($numberCharacters as $count => $numberCharacter) {
+            $characterAsDecimal = array_search($numberCharacter, $fromBaseCharacters);
+            $exponent = bcpow($fromLen, $numberLen - ($count + 1));
+
+            $total = bcmul($characterAsDecimal, $exponent);
+            $decimal = bcadd($decimal, $total);
+        }
+        return $decimal;
+    }
+
+    /**
+     * Convert a number from any base to decimal
      *
      * @param string $numberInput The number to convert
      * @param string $fromBaseInput The base charset of the input number
      *
      * @return int The base 10 number
      */
-    private static function base10convert($numberInput, $fromBaseInput)
+    private static function decimalToNonDecimal($number, $toBaseCharacterSet)
     {
-
         // Build base character arrays
-        $numberLen = mb_strlen($numberInput);
-        $fromLen = mb_strlen($fromBaseInput);
+        $toBaseCharacters = self::mbStrSplit($toBaseCharacterSet);
 
-        // Get base lengths
-        $number = self::mbStrSplit($numberInput, 1);
-        $fromBase = self::mbStrSplit($fromBaseInput);
-
-        $returnValue = 0;
-        for ($i = 1; $i <= $numberLen; $i++) {
-            $returnValue = bcadd(
-                $returnValue,
-                bcmul(array_search($number[$i - 1], $fromBase), bcpow($fromLen, $numberLen - $i))
-            );
+        // If the input number is less than the decimal number do a direct lookup
+        if ($number < count($toBaseCharacters)) {
+            return $toBaseCharacters[$number];
         }
-        return $returnValue;
 
+        return self::decimaltoMultiDigitNonDecimal($number, $toBaseCharacters);
+    }
+
+    /**
+     * Convert a decimal number to a multi digit non decimal number
+     *
+     * @param  Int   $number           Decimal Input
+     * @param  Array $toBaseCharacters Array of characters in non decimal base
+     *
+     * @return String
+     */
+    private static function decimaltoMultiDigitNonDecimal($number, $toBaseCharacters)
+    {
+        $returnValue = '';
+
+        while ($number != '0') {
+            $SmallestExponent = bcmod($number, count($toBaseCharacters));
+            $returnValue = $toBaseCharacters[$SmallestExponent] . $returnValue;
+            $number = bcdiv($number, count($toBaseCharacters), 0);
+        }
+
+        return $returnValue;
     }
 
     /**
@@ -115,8 +138,6 @@ class BaseConvert
      */
     public static function mbStrSplit($string)
     {
-
         return preg_split('//u', $string, -1, PREG_SPLIT_NO_EMPTY);
-
     }
 }
