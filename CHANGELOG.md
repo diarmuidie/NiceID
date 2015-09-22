@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+### Version 1.0.0 (22 Sept 2015)
+
+- Initial stable release.
+- Refactor BaseConvert class.
+
 ### Version 0.2.2 (16 May 2015)
 
 - Bump composer dependencies.
