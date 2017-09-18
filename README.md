@@ -20,7 +20,7 @@ Features
 - URL friendly.
 - No external dependencies.
 - PSR-4 compatible.
-- Compatible with PHP >= 5.3.3.
+- Compatible with PHP >= 5.4
 
 Installation
 ------------
