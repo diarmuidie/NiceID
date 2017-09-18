@@ -36,7 +36,9 @@ class FisherYates
         $secret = hexdec(substr(md5($secret), -6));
 
         // Seed the random number generator
-        mt_srand($secret);
+        version_compare(phpversion(),'7.1', '<') ?
+          mt_srand($secret) :
+          mt_srand($secret, MT_RAND_PHP);
 
         $shuffledArray = array();
         while (count($array) > 0) {
@@ -75,7 +77,9 @@ class FisherYates
         $secret = hexdec(substr(md5($secret), -6));
 
         // Seed the random number generator
-        mt_srand($secret);
+        version_compare(phpversion(),'7.1', '<') ?
+          mt_srand($secret) :
+          mt_srand($secret, MT_RAND_PHP);
 
         $keys = array();
         // Build the encoding keys
