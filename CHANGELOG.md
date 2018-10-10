@@ -1,6 +1,18 @@
 Changelog
 ---------
 
+### Version 1.2.0 (10 Oct 2018)
+
+- Drop PHP < 5.6 support.
+- Add support for PHP 7.2.
+- Remove codeclimate test.
+- Add PHPCS.
+
+### Version 1.1.0 (18 Sept 2017)
+
+- Drop PHP5.3 support.
+- Specify mt_srand algorithm to maintain backwards compatibility from PHP 7.1 to earlier versions.
+
 ### Version 1.0.0 (22 Sept 2015)
 
 - Initial stable release.
