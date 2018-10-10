@@ -12,6 +12,7 @@
 namespace Diarmuidie\NiceID\Tests\Utilities;
 
 use Diarmuidie\NiceID\Utilities;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Class NiceIDTest
@@ -22,7 +23,7 @@ use Diarmuidie\NiceID\Utilities;
  * @copyright 2015 Diarmuid
  * @license   http://www.opensource.org/licenses/MIT The MIT License
  */
-class BaseConvertTest extends \PHPUnit_Framework_TestCase
+class BaseConvertTest extends TestCase
 {
 
 
