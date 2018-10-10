@@ -51,7 +51,6 @@ class NiceID implements NiceIDInterface
         if ($secret !== null) {
             $this->secret = $secret;
         }
-
     }
 
     /**
@@ -63,7 +62,6 @@ class NiceID implements NiceIDInterface
     {
 
         $this->secret = $secret;
-
     }
 
     /**
@@ -75,7 +73,6 @@ class NiceID implements NiceIDInterface
     {
 
         $this->characters = $characters;
-
     }
 
     /**
@@ -87,7 +84,6 @@ class NiceID implements NiceIDInterface
     {
 
         $this->minLength = $minLength;
-
     }
 
     /**
@@ -100,7 +96,6 @@ class NiceID implements NiceIDInterface
 
         $maxID = PHP_INT_MAX - $this->minLengthAdder($this->characters, $this->minLength);
         return $maxID;
-
     }
 
     /**
@@ -126,10 +121,8 @@ class NiceID implements NiceIDInterface
             );
         }
 
-        $characters = $this->characters;
-
         // Split characters string into array
-        $charactersArray = BaseConvert::mbStrSplit($characters);
+        $charactersArray = BaseConvert::mbStrSplit($this->characters);
 
         // Pick a random salt character
         $salt = $charactersArray[mt_rand(0, count($charactersArray) - 1)];
@@ -153,7 +146,6 @@ class NiceID implements NiceIDInterface
         $niceId = implode($niceId);
 
         return $niceId;
-
     }
 
     /**
@@ -172,15 +164,13 @@ class NiceID implements NiceIDInterface
             );
         }
 
-        $characters = $this->characters;
-
         // Unshuffle the ID
         $niceIdArray = BaseConvert::mbStrSplit($niceId);
         $niceId = FisherYates::unshuffle($niceIdArray, $this->secret);
         $niceId = implode($niceId);
 
         // Split characters string into array
-        $charactersArray = BaseConvert::mbStrSplit($characters);
+        $charactersArray = BaseConvert::mbStrSplit($this->characters);
 
         $salt = $this->getSaltChar($niceId);
 
@@ -199,7 +189,6 @@ class NiceID implements NiceIDInterface
         }
 
         return $id;
-
     }
 
     /**
@@ -214,7 +203,6 @@ class NiceID implements NiceIDInterface
     {
 
         return pow(strlen($characters), $minLength - 2);
-
     }
 
     /**
@@ -229,7 +217,6 @@ class NiceID implements NiceIDInterface
 
         // Return the last char in the ID
         return mb_substr($niceID, -1);
-
     }
 
     /**
@@ -244,6 +231,5 @@ class NiceID implements NiceIDInterface
 
         // Return all but the last char in the ID
         return mb_substr($niceID, 0, -1);
-
     }
 }

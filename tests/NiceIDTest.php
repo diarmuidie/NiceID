@@ -12,6 +12,7 @@
 namespace Diarmuidie\NiceID\Tests;
 
 use Diarmuidie\NiceID\NiceID;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Class NiceIDTest
@@ -22,7 +23,7 @@ use Diarmuidie\NiceID\NiceID;
  * @copyright 2015 Diarmuid
  * @license   http://www.opensource.org/licenses/MIT The MIT License
  */
-class NiceIDTest extends \PHPUnit_Framework_TestCase
+class NiceIDTest extends TestCase
 {
     private $niceid;
 
@@ -48,7 +49,6 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
         $decodedInt = $this->niceid->decode($encoded);
 
         $this->assertEquals($int, $decodedInt);
-
     }
 
     /**
@@ -64,7 +64,6 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
 
         $decoded = $this->niceid->decode($niceID);
         $this->assertEquals($int, $decoded);
-
     }
 
     /**
@@ -92,7 +91,6 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
         $decodedInt = $this->niceid->decode($encoded);
 
         $this->assertEquals($decodedInt, $int);
-
     }
 
     /**
@@ -106,7 +104,6 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
         $niceid = new NiceID($testSecret);
 
         $this->assertAttributeEquals($testSecret, 'secret', $niceid);
-
     }
 
     /**
@@ -126,7 +123,6 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(mb_strlen($encoded), 2);
         $this->assertContains('a', $encoded);
         $this->assertContains('b', $encoded);
-
     }
 
     /**
@@ -146,7 +142,6 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
         $encoded = $this->niceid->encode(10);
 
         $this->assertGreaterThanOrEqual($minLength, strlen($encoded));
-
     }
 
     /**
@@ -165,12 +160,11 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
         $this->niceid->setMinLength($under + 2);
         $this->niceid->encode(1);
 
-        $this->setExpectedException('LengthException');
+        $this->expectException('LengthException');
 
         // Length Exception
         $this->niceid->setMinLength($over + 2);
         $this->niceid->encode(1);
-
     }
 
     /**
@@ -179,9 +173,8 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
     public function testNotIntEncodeException()
     {
 
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException('InvalidArgumentException');
         $this->niceid->encode('1');
-
     }
 
     /**
@@ -190,9 +183,8 @@ class NiceIDTest extends \PHPUnit_Framework_TestCase
     public function testNotScalarDecodeException()
     {
 
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException('InvalidArgumentException');
         $this->niceid->decode(array());
-
     }
 
     /**
