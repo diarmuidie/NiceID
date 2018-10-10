@@ -121,10 +121,8 @@ class NiceID implements NiceIDInterface
             );
         }
 
-        $characters = $this->characters;
-
         // Split characters string into array
-        $charactersArray = BaseConvert::mbStrSplit($characters);
+        $charactersArray = BaseConvert::mbStrSplit($this->characters);
 
         // Pick a random salt character
         $salt = $charactersArray[mt_rand(0, count($charactersArray) - 1)];
@@ -166,15 +164,13 @@ class NiceID implements NiceIDInterface
             );
         }
 
-        $characters = $this->characters;
-
         // Unshuffle the ID
         $niceIdArray = BaseConvert::mbStrSplit($niceId);
         $niceId = FisherYates::unshuffle($niceIdArray, $this->secret);
         $niceId = implode($niceId);
 
         // Split characters string into array
-        $charactersArray = BaseConvert::mbStrSplit($characters);
+        $charactersArray = BaseConvert::mbStrSplit($this->characters);
 
         $salt = $this->getSaltChar($niceId);
 
