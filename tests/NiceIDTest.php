@@ -49,7 +49,6 @@ class NiceIDTest extends TestCase
         $decodedInt = $this->niceid->decode($encoded);
 
         $this->assertEquals($int, $decodedInt);
-
     }
 
     /**
@@ -65,7 +64,6 @@ class NiceIDTest extends TestCase
 
         $decoded = $this->niceid->decode($niceID);
         $this->assertEquals($int, $decoded);
-
     }
 
     /**
@@ -93,7 +91,6 @@ class NiceIDTest extends TestCase
         $decodedInt = $this->niceid->decode($encoded);
 
         $this->assertEquals($decodedInt, $int);
-
     }
 
     /**
@@ -107,7 +104,6 @@ class NiceIDTest extends TestCase
         $niceid = new NiceID($testSecret);
 
         $this->assertAttributeEquals($testSecret, 'secret', $niceid);
-
     }
 
     /**
@@ -127,7 +123,6 @@ class NiceIDTest extends TestCase
         $this->assertEquals(mb_strlen($encoded), 2);
         $this->assertContains('a', $encoded);
         $this->assertContains('b', $encoded);
-
     }
 
     /**
@@ -147,7 +142,6 @@ class NiceIDTest extends TestCase
         $encoded = $this->niceid->encode(10);
 
         $this->assertGreaterThanOrEqual($minLength, strlen($encoded));
-
     }
 
     /**
@@ -171,7 +165,6 @@ class NiceIDTest extends TestCase
         // Length Exception
         $this->niceid->setMinLength($over + 2);
         $this->niceid->encode(1);
-
     }
 
     /**
@@ -182,7 +175,6 @@ class NiceIDTest extends TestCase
 
         $this->expectException('InvalidArgumentException');
         $this->niceid->encode('1');
-
     }
 
     /**
@@ -193,7 +185,6 @@ class NiceIDTest extends TestCase
 
         $this->expectException('InvalidArgumentException');
         $this->niceid->decode(array());
-
     }
 
     /**

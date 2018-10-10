@@ -53,7 +53,6 @@ class FisherYates
         mt_srand();
 
         return $shuffledArray;
-
     }
 
     /**
@@ -94,7 +93,8 @@ class FisherYates
      *
      * @param string $secret The secret
      */
-    private static function seedRandomNumerGenerator($secret) {
+    private static function seedRandomNumerGenerator($secret)
+    {
         // Hash the secret and convert to decimal
         $secretDecimal = hexdec(substr(md5($secret), -6));
 
@@ -102,7 +102,7 @@ class FisherYates
         // Use the legacy MT_RAND_PHP Implementation in PHP > 7.1 .
         // TODO: Switch to using the correct MT_RAND_MT19937 implementation
         // in next major release (not backwards compatible).
-        version_compare(phpversion(),'7.1', '<') ?
+        version_compare(phpversion(), '7.1', '<') ?
           mt_srand($secretDecimal) :
           mt_srand($secretDecimal, MT_RAND_PHP);
         // @codeCoverageIgnoreEnd

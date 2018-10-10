@@ -49,7 +49,6 @@ class FisherYatesTest extends TestCase
         $shuffled = Utilities\FisherYates::shuffle($this->unShuffledArray, $this->testSecret);
 
         $this->assertEquals($shuffled, $this->shuffledArray);
-
     }
 
     /**
@@ -61,6 +60,5 @@ class FisherYatesTest extends TestCase
         $unShuffled = Utilities\FisherYates::unshuffle($this->shuffledArray, $this->testSecret);
 
         $this->assertEquals($unShuffled, $this->unShuffledArray);
-
     }
 }
