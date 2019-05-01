@@ -1,0 +1,26 @@
+kind: pipeline
+name: default
+
+steps:
+- name: install
+  image: composer
+  commands:
+    - make clean
+    - composer install
+
+- name: lint
+  image: php:7-alpine
+  commands:
+    - ./vendor/bin/phpcs
+
+- name: test (php 7.2)
+  image: php:7.2-alpine
+  commands:
+    - docker-php-ext-install bcmath
+    - ./vendor/bin/phpunit
+
+- name: test (php 7.3)
+  image: php:7.3-alpine
+  commands:
+    - docker-php-ext-install bcmath
+    - ./vendor/bin/phpunit

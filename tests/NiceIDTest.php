@@ -30,7 +30,7 @@ class NiceIDTest extends TestCase
     /**
      * Initialise a new NiceId instance for each test
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->niceid = new NiceID();
     }

@@ -7,7 +7,7 @@ Developed by [Diarmuid](https://diarmuid.ie/).
 
 [![Latest Stable Version](https://poser.pugx.org/diarmuidie/niceid/v/stable)](https://packagist.org/packages/diarmuidie/niceid)
 [![License](https://poser.pugx.org/diarmuidie/niceid/license)](https://packagist.org/packages/diarmuidie/niceid)
-[![Build Status](https://travis-ci.org/diarmuidie/NiceID.svg)](https://travis-ci.org/diarmuidie/NiceID)
+[![Build Status](https://cloud.drone.io/api/badges/diarmuidie/EnvPopulate/status.svg)](https://cloud.drone.io/diarmuidie/EnvPopulate)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/319dfe53-d14e-478a-99e7-7f795fa33a2b/mini.png)](https://insight.sensiolabs.com/projects/319dfe53-d14e-478a-99e7-7f795fa33a2b)
 <!-- [![Total Downloads](https://poser.pugx.org/diarmuidie/niceid/downloads)](https://packagist.org/packages/diarmuidie/niceid) -->
 
@@ -82,6 +82,7 @@ To Do
 - [x] Refactor `BaseConvert::convert()` method.
 - [x] Handle `PHP_INT_MAX` overflow.
 - [ ] Implement [BCMath](http://php.net/manual/en/book.bc.php) support for integers larger than `PHP_INT_MAX`.
+- [x] Setup Drone.io to run unit tests.
 
 Contributing
 ---------
