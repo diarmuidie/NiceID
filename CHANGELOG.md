@@ -1,6 +1,12 @@
 Changelog
 ---------
 
+### Version 1.2.1 (1 May 2019)
+
+- Replace Travis with Drone.io for CI.
+- Drop tests for PHP < 7.2
+- Add support for PHP 7.3
+
 ### Version 1.2.0 (10 Oct 2018)
 
 - Drop PHP < 5.6 support.
